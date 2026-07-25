@@ -1,0 +1,116 @@
+# ==========================================
+# Python & Environments
+# ==========================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+env.bak/
+venv.bak/
+
+# Distribution / Packaging
+build/
+devel/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+
+# Caching & Testing
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ==========================================
+# AI / Machine Learning / Deep Learning
+# ==========================================
+# Datasets (Keep raw data out of git)
+data/
+datasets/
+*.csv
+*.parquet
+*.h5
+*.hdf5
+*.feather
+
+# Model Checkpoints, Weights & Exports
+models/
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.ckpt
+*.h5
+*.pb
+*.tflite
+
+# Training Runs, Logs & Visualizations
+runs/
+logs/
+wandb/
+.wandb/
+mlruns/
+tensorboard/
+lightning_logs/
+
+# Hugging Face & Framework Caches
+.cache/
+huggingface/
+
+# ==========================================
+# Jupyter Notebooks & Editors
+# ==========================================
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# IDE / Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==========================================
+# Environment Variables & Secrets
+# ==========================================
+# Never commit API keys (OpenAI, HuggingFace, WandB, etc.)
+.env
+.env.local
+*.pem
+*.key
+
+*.dist/
+
+# Virtual Environments
+venv/
+backend/venv/
+env/
+
+# Environment Variables / API Keys (CRITICAL)
+.env
+backend/.env
+
+# Databases & Local Data
+*.db
+backend/*.db
+
+# Python Cache
+__pycache__/
+backend/__pycache__/
+*.pyc
+
+# Node Modules (for frontend)
+node_modules/
+frontend/node_modules/
+dist/
