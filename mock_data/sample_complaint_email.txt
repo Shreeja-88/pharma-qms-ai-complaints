@@ -1,0 +1,26 @@
+From: quality@apexpharma-distributors.com
+To: qa-complaints@PharmaPulse AI-pharma.com
+Date: July 24, 2026
+Subject: URGENT: Quality Complaint - Metformin Hydrochloride Tablets 500mg
+
+Dear Quality Assurance Team,
+
+We are submitting a formal quality complaint regarding a recent shipment received at our central warehouse.
+
+Complaint Details:
+- Product Name: Metformin Hydrochloride API / FDF Grade
+- Product Strength: 500 mg
+- Batch / Lot Number: MFH260712A
+- Affected Quantity: 50 kg (2 HDPE Drums)
+- Manufacturing Date: 2026-02-15
+- Expiry Date: 2028-02-14
+
+Defect Description:
+Upon opening HDPE Drum #2 during standard inspection, our QA team observed significant clumping and minor discoloration in the powder mix. The container seal appeared intact, but moisture ingress is suspected.
+
+Please acknowledge receipt of this complaint and advise on immediate next steps, batch quarantine, and replacement procedures.
+
+Regards,
+Dr. Aris Thorne
+Senior Quality Control Manager
+Apex Pharma Distributors
