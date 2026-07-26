@@ -136,7 +136,7 @@ def suggest_capa_tool(complaint_data: dict) -> dict:
     return json.loads(cleaned)
 
 # ------------------------------------------------------------------
-# Bonus Tool: Complaint Completeness Checker Tool
+# Tool 6: Complaint Completeness Checker Tool
 # ------------------------------------------------------------------
 @tool
 def check_completeness_tool(complaint_data: dict) -> dict:
