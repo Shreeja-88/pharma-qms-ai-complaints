@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Send, Upload, ShieldAlert, CheckCircle, FileText, Bot, User } from 'lucide-react';
 import './App.css';
 
+const API_BASE_URL = "https://pharma-qms-backend.onrender.com";
 export default function App() {
   const dispatch = useDispatch();
   const { formData, chatHistory, loading } = useSelector((state) => state.complaint);
@@ -27,7 +28,8 @@ export default function App() {
       formDataPayload.append('file', selectedFile);
 
       try {
-        const res = await axios.post('http://127.0.0.1:8000/api/extract-document', formDataPayload);
+      // 1. Updated Document Extraction Endpoint
+      const res = await axios.post(`${API_BASE_URL}/api/extract-document`, formDataPayload);
         dispatch(updateFormData(res.data.form_data));
         dispatch(addMessage({ sender: 'ai', message: res.data.assistant_message }));
       } catch (err) {
@@ -47,20 +49,20 @@ export default function App() {
     const isEdit = userText.toLowerCase().includes('sorry') || userText.toLowerCase().includes('change') || userText.toLowerCase().includes('update') || userText.toLowerCase().includes('batch');
     const actionType = isEdit ? 'edit' : 'log';
 
-    try {
-      const res = await axios.post('http://127.0.0.1:8000/api/chat', {
-        message: userText,
-        action_type: actionType,
-        current_data: formData
-      });
-
-      dispatch(updateFormData(res.data.form_data));
-      dispatch(addMessage({ sender: 'ai', message: res.data.assistant_message }));
-    } catch (err) {
-      dispatch(addMessage({ sender: 'ai', message: 'Error processing request.' }));
-    } finally {
-      dispatch(setLoading(false));
-    }
+        try {
+          // 2. Updated Chat Endpoint
+          const res = await axios.post(`${API_BASE_URL}/api/chat`, {
+            message: userText,
+            action_type: actionType,
+            current_data: formData
+          });
+          dispatch(updateFormData(res.data.form_data));
+          dispatch(addMessage({ sender: 'ai', message: res.data.assistant_message }));
+        } catch (err) {
+          dispatch(addMessage({ sender: 'ai', message: 'Failed to process chat message.' }));
+        } finally {
+          dispatch(setLoading(false));
+        }
   };
   
 
