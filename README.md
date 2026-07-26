@@ -4,7 +4,7 @@
 
 Pharma QMS is an AI-powered Quality Management System (QMS) designed for pharmaceutical manufacturing organizations involved in Active Pharmaceutical Ingredients (API) and Finished Dosage Forms (FDF). The platform streamlines customer complaint management by combining modern web technologies with Large Language Models (LLMs) orchestrated through LangGraph.
 
-The application enables Quality Assurance teams to capture, process, analyze, and update customer complaints using natural language interactions. It also provides AI-assisted document parsing, complaint editing, risk assessment, and Corrective and Preventive Action (CAPA) recommendations while maintaining data consistency throughout the complaint lifecycle.
+The application enables Quality Assurance teams to capture, process, analyze, and update customer complaints using natural language interactions. It also provides AI-assisted document parsing, complaint editing, risk assessment, and Corrective and Preventive Action (CAPA) recommendations while maintaining data consistency throughout the complaint lifecycle. 
 
 ---
 
@@ -148,6 +148,56 @@ Suggest CAPA.
 
 ---
 
+## Complaint Completeness Checker
+
+To improve data quality and regulatory compliance, the system includes an AI-powered Complaint Completeness Checker that validates complaint records before they are finalized.
+
+The checker continuously evaluates whether all mandatory complaint fields have been captured and provides real-time feedback to the user during the complaint logging process.
+
+### Key Capabilities
+
+- Calculates complaint completion percentage in real time.
+- Identifies missing mandatory fields required for complaint registration.
+- Updates automatically as additional information is provided through the AI assistant.
+- Helps ensure complaint records meet Quality Management System (QMS) documentation standards before being saved.
+
+### Example
+
+**User Input**
+
+```
+Apollo reported discolored capsules.
+```
+
+**Completeness Status**
+
+```
+50% Complete (Incomplete)
+
+Missing Fields:
+• Batch Number
+• Affected Quantity
+```
+
+After the user provides:
+
+```
+Batch Number: BT-1024
+Affected Quantity: 150 units
+```
+
+The checker automatically updates to:
+
+```
+100% Complete
+
+Complaint is ready for submission.
+```
+
+This feature assists Quality Assurance teams in reducing incomplete complaint records and improving regulatory compliance by ensuring all required information is captured before submission.
+
+---
+
 # System Workflow
 
 ```
@@ -157,21 +207,28 @@ Customer Complaint
 AI Complaint Extraction
         │
         ▼
+Complaint Completeness Checker
+        │
+        ├── Incomplete → Request Missing Information
+        │
+        └── Complete
+                │
+                ▼
 Structured Complaint Record
-        │
-        ▼
+                │
+                ▼
 Complaint Editing
-        │
-        ▼
+                │
+                ▼
 Document Parsing
-        │
-        ▼
+                │
+                ▼
 Risk Assessment
-        │
-        ▼
+                │
+                ▼
 CAPA Recommendation
-        │
-        ▼
+                │
+                ▼
 Quality Assurance Review
 ```
 

@@ -62,6 +62,7 @@ export default function App() {
       dispatch(setLoading(false));
     }
   };
+  
 
   return (
     <div className="app-container">
@@ -144,6 +145,23 @@ export default function App() {
               </div>
             </div>
           </div>
+
+          <div className="risk-item">
+            <br></br>
+            <span><strong>Data Completeness:</strong></span>
+            <span style={{
+              fontWeight: 'bold',
+              color: formData.completeness_status === 'Complete' ? '#16a34a' : '#d97706'
+            }}>
+              {formData.completeness_score || '0%'} ({formData.completeness_status || 'Pending'})
+            </span>
+          </div>
+
+          {formData.missing_fields && formData.missing_fields.length > 0 && (
+            <div style={{ fontSize: '0.75rem', color: '#dc2626', marginTop: '4px' }}>
+              Missing required fields: {formData.missing_fields.join(', ')}
+            </div>
+          )}
         </div>
 
         {/* RIGHT PANEL: AI Assistant Chat */}

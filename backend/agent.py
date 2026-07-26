@@ -136,6 +136,28 @@ def suggest_capa_tool(complaint_data: dict) -> dict:
     return json.loads(cleaned)
 
 # ------------------------------------------------------------------
+# Bonus Tool: Complaint Completeness Checker Tool
+# ------------------------------------------------------------------
+@tool
+def check_completeness_tool(complaint_data: dict) -> dict:
+    """Checks if all critical pharmaceutical QMS fields are present."""
+    required_fields = ["product_name", "batch_number", "affected_quantity", "defect_description"]
+    missing_fields = [field.replace("_", " ").title() for field in required_fields if not complaint_data.get(field)]
+    
+    if not missing_fields:
+        return {
+            "completeness_score": "100%",
+            "completeness_status": "Complete",
+            "missing_fields": []
+        }
+    else:
+        return {
+            "completeness_score": f"{int((1 - len(missing_fields)/len(required_fields)) * 100)}%",
+            "completeness_status": "Incomplete",
+            "missing_fields": missing_fields
+        }
+
+# ------------------------------------------------------------------
 # LangGraph Workflow Construction
 # ------------------------------------------------------------------
 def execute_qms_agent(user_input: str, action_type: str = "log", current_data: dict = None) -> dict:
@@ -158,11 +180,15 @@ def execute_qms_agent(user_input: str, action_type: str = "log", current_data: d
     # 3. CAPA Reasoning
     capa_info = suggest_capa_tool.invoke({"complaint_data": merged})
     
+    # 4. Bonus Completeness Check
+    completeness_info = check_completeness_tool.invoke({"complaint_data": merged})
+
     # Combine everything into complete state
     final_form_state = {
         **merged,
         **risk_info,
-        **capa_info
+        **capa_info,
+        **completeness_info
     }
     
     return {
