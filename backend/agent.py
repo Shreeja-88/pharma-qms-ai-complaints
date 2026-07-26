@@ -180,7 +180,7 @@ def execute_qms_agent(user_input: str, action_type: str = "log", current_data: d
     # 3. CAPA Reasoning
     capa_info = suggest_capa_tool.invoke({"complaint_data": merged})
     
-    # 4. Bonus Completeness Check
+    # 4. Completeness Check
     completeness_info = check_completeness_tool.invoke({"complaint_data": merged})
 
     # Combine everything into complete state

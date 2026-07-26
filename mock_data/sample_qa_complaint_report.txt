@@ -1,0 +1,50 @@
+================================================================================
+                 PHARMAPLUSE AI PHARMACEUTICAL MANUFACTURING LTD.
+                       QUALITY MANAGEMENT SYSTEM (QMS)
+                      FORMAL COMPLAINT & INVESTIGATION REPORT
+================================================================================
+
+REPORT REFERENCE: QMS-CR-2026-089
+DATE OF INCIDENT: July 20, 2026
+REPORTING FACILITY: St. Jude Regional Hospital & Pharmacy Network
+LOCATION: Central Storage Facility, Bay 4
+
+--------------------------------------------------------------------------------
+1. PRODUCT & BATCH TRACEABILITY INFORMATION
+--------------------------------------------------------------------------------
+Product Name          : Amoxicillin & Potassium Clavulanate Oral Suspension
+Product Grade / Spec  : USP / Finished Dosage Form (FDF)
+Product Strength      : 250 mg / 5ml
+Batch / Lot Number    : AMX260588B
+Manufacturing Date    : 2026-03-10
+Expiry Date           : 2028-03-09
+Affected Quantity     : 120 Cartons (1,200 Bottles)
+
+--------------------------------------------------------------------------------
+2. COMPLAINT DETAILS & DEFECT DESCRIPTION
+--------------------------------------------------------------------------------
+During routine incoming batch inspection at the hospital dispensary, quality 
+control auditors observed physical abnormalities in Batch AMX260588B.
+
+Observed Defect:
+Multiple sealed glass bottles exhibited clumping and severe caking of the powder 
+mix prior to reconstitution. Upon inspection, 15% of tested bottles showed 
+discoloration (darkening to brown tint). The primary foil induction seals on 
+the affected bottles appeared loose or incompletely torqued during capping.
+
+Impact Assessment:
+Potential moisture ingress leading to active ingredient degradation and loss of 
+potency. Immediate quarantine of the entire lot at hospital level was executed.
+
+--------------------------------------------------------------------------------
+3. INITIAL QA ACTION REQUESTED
+--------------------------------------------------------------------------------
+- Issue immediate Batch Quarantine Notice for AMX260588B across all centers.
+- Initiate Root Cause Analysis (RCA) regarding capping torque / sealing line 3.
+- Authorize immediate replacement of 120 affected cartons to maintain supply.
+
+Report Compiled By:
+Dr. Elena Rostova, Lead Quality Auditor
+St. Jude Health Network | Quality Operations
+Contact: e.rostova@stjudehealth-qms.org
+================================================================================
